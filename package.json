@@ -15,7 +15,8 @@
     "prelint": "pretty-quick",
     "precommit": "yarn run lint",
     "prepush": "concurrently 'yarn run lint' 'yarn run tsc'",
-    "reinstall": "rimraf node_modules && yarn install"
+    "reinstall": "rimraf node_modules && yarn install",
+    "clean:dist": "rimraf dist"
   },
   "devDependencies": {
     "@types/react": "16.4.13",
@@ -32,7 +33,9 @@
     "typescript": "3.0.3"
   },
   "dependencies": {
+    "emotion": "^9.2.8",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "react-emotion": "^9.2.8"
   }
 }
