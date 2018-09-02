@@ -1,7 +1,7 @@
 {
   "name": "restaurant-finder",
   "version": "0.1.0",
-  "description": "Apple Map JS Kit demo ",
+  "description": "Apple Map JS Kit demo",
   "main": "index.js",
   "repository": "git@github.com:krzysztofzuraw/restaurant-finder.git",
   "author": "Krzysztof Żuraw <krzysztofzuraw@fastmail.com>",
@@ -15,7 +15,8 @@
     "prelint": "pretty-quick",
     "precommit": "yarn run lint",
     "prepush": "concurrently 'yarn run lint' 'yarn run tsc'",
-    "reinstall": "rimraf node_modules && yarn install"
+    "reinstall": "rimraf node_modules && yarn install",
+    "clean:dist": "rimraf dist"
   },
   "devDependencies": {
     "@types/react": "16.4.13",
@@ -29,10 +30,13 @@
     "rimraf": "2.6.2",
     "tslint": "5.11.0",
     "tslint-config-prettier": "1.15.0",
-    "typescript": "3.0.3"
+    "typescript": "3.0.3",
+    "typescript-styled-plugin": "^0.10.0"
   },
   "dependencies": {
+    "emotion": "^9.2.8",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "react-emotion": "^9.2.8"
   }
 }

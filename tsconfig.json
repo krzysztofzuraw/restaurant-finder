@@ -21,13 +21,18 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* Module Resolution Options */
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "~*": ["./src/*"]
+      "~src/*": ["./src/*"]
     },
-    "esModuleInterop": true
+    "esModuleInterop": true,
+
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ]
   },
   "include": ["src/**/*", "typings/*"],
   "exclude": ["node_modules", "src/**/*.spec/*"]

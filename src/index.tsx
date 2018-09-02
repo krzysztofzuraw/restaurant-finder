@@ -1,6 +1,6 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
-ReactDOM.render(<div>Working!</div>, document.getElementById(
-  "root"
-) as HTMLElement);
+import { MainLayout } from '~src/layout';
+
+ReactDOM.render(<MainLayout />, document.getElementById('root') as HTMLElement);
