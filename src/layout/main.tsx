@@ -1,6 +1,7 @@
 import { injectGlobal } from 'emotion';
 import * as React from 'react';
 
+import { Header } from '~src/components';
 import styled from './theme';
 
 /* tslint:disable:no-unused-expression */
@@ -26,7 +27,7 @@ const GridLayout = styled('div')`
 
 export const MainLayout: React.SFC = () => (
   <GridLayout>
-    <div>Header</div>
+    <Header />
     <div>Content</div>
   </GridLayout>
 );
