@@ -39,3 +39,5 @@ export const Header: React.SFC = () => (
     </form>
   </HeaderContainer>
 );
+
+Header.displayName = 'HeaderComponent';
