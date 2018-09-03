@@ -16,7 +16,7 @@
     "lint": "tslint --project .",
     "prelint": "pretty-quick",
     "precommit": "yarn run lint",
-    "prepush": "concurrently 'yarn run lint' 'yarn run tsc'",
+    "prepush": "concurrently 'yarn run lint' 'yarn run tsc' 'yarn run test'",
     "reinstall": "rimraf node_modules && yarn install",
     "clean:dist": "rimraf dist"
   },
