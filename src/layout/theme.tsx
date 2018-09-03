@@ -1,7 +1,15 @@
 import { ThemeProvider } from 'emotion-theming';
 import * as React from 'react';
+import styled, { CreateStyled } from 'react-emotion';
 
-const theme = {
+interface Theme {
+  color: { blue: string; white: string };
+  fontSize: { large: string; regular: string };
+  fontWeight: { regular: number };
+  lineHeight: string;
+}
+
+const theme: Theme = {
   color: {
     blue: '#2470d8',
     white: '#FFFFFF',
@@ -20,3 +28,5 @@ export const AppTheme: React.SFC = ({ children }) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
 );
 AppTheme.displayName = 'AppTheme';
+
+export default styled as CreateStyled<Theme>;
