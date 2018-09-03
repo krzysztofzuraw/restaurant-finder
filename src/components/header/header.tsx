@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'react-emotion';
+
 import SearchIcon from './search.svg';
 
 const HeaderContainer = styled('div')`
