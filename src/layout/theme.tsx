@@ -8,10 +8,12 @@ const theme = {
   },
   fontSize: {
     large: '2.5em',
+    regular: '1em',
   },
   fontWeight: {
     regular: 400,
   },
+  lineHeight: '25px',
 };
 
 export const AppTheme: React.SFC = ({ children }) => (
