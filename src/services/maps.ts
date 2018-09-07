@@ -1,6 +1,6 @@
 import leaflet from 'leaflet';
 
-import { configService } from '~src/services';
+import { configService } from '.';
 
 const config = configService.getConfig();
 
