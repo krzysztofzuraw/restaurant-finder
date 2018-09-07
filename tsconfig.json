@@ -35,5 +35,5 @@
     ]
   },
   "include": ["src/**/*", "typings/*"],
-  "exclude": ["node_modules", "src/**/*.spec/*"]
+  "exclude": ["./node_modules", "src/**/*.spec/*"]
 }
