@@ -25,7 +25,7 @@
     "@types/leaflet": "^1.2.11",
     "@types/react": "16.4.13",
     "@types/react-dom": "16.0.7",
-    "codecov": "3.0.4",
+    "codecov": "3.1.0",
     "concurrently": "4.0.1",
     "husky": "0.14.3",
     "jest": "23.5.0",
