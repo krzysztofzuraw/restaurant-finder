@@ -16,6 +16,13 @@ injectGlobal`
     margin: 0px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  h2, h6 {
+    margin: 0;
+  }
 `;
 
 const GridLayout = styled('div')`

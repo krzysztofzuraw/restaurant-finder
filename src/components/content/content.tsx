@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'react-emotion';
 
+import { Sidebar } from '~src/components';
 import { MapContainer } from '~src/containers';
 
 const ContentContainer = styled('div')`
@@ -11,7 +12,7 @@ const ContentContainer = styled('div')`
 
 export const Content: React.SFC = () => (
   <ContentContainer>
-    <div>Content here!</div>
+    <Sidebar />
     <MapContainer />
   </ContentContainer>
 );
