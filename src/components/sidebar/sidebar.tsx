@@ -3,7 +3,7 @@ import * as React from 'react';
 import styled from '~src/layout/theme';
 import RestaurantIcon from './restaurant.svg';
 
-const ListItem = styled('li')`
+const PlaceResult = styled('li')`
   display: flex;
   flex-direction: column;
   background-image: url(${RestaurantIcon});
@@ -26,38 +26,53 @@ const ListItem = styled('li')`
   }
 `;
 
-const ListItemHeader = styled('h2')`
+const PlaceResultHeader = styled('h2')`
   color: ${props => props.theme.color.black};
   margin-right: auto;
   font-size: ${props => props.theme.fontSize.medium};
 `;
 
-const ListItemDistance = styled('h6')`
+const PlaceResultDistance = styled('h6')`
   justify-self: flex-end;
   color: ${props => props.theme.color.darkGray};
   font-size: ${props => props.theme.fontSize.small};
 `;
 
-export const Sidebar: React.SFC = () => (
+const PlaceResultAdditionalInfo = styled('div')`
+  margin-top: 5px;
+  color: ${props => props.theme.color.black};
+  font-weight: ${props => props.theme.fontWeight.regular};
+  font-size: ${props => props.theme.fontSize.small};
+  letter-spacing: 0.0032em;
+`;
+
+const PlaceResultFirstAddress = styled('div')`
+  margin-bottom: 2.5px;
+`;
+
+interface Props {
+  placeResults: Array<{
+    name: string;
+    distance: string;
+    addressPartOne: string;
+    addressPartTwo: string;
+  }>;
+}
+
+export const Sidebar: React.SFC<Props> = ({ placeResults }) => (
   <ul>
-    <ListItem>
-      <div>
-        <ListItemHeader>Vaffanapoli</ListItemHeader>
-        <ListItemDistance>100 meters</ListItemDistance>
-      </div>
-      <div
-        style={{
-          marginTop: '5px',
-          color: '#333333',
-          fontWeight: 400,
-          fontSize: '0.75em',
-          letterSpacing: '0.0032em',
-        }}
-      >
-        <div style={{ marginBottom: '2.5px' }}>Włodkowica 5/5</div>
-        <div>50-250 Wrocław</div>
-      </div>
-    </ListItem>
+    {placeResults.map((place, idx) => (
+      <PlaceResult key={`${place}-${idx}`}>
+        <div>
+          <PlaceResultHeader>{place.name}</PlaceResultHeader>
+          <PlaceResultDistance>{place.distance}</PlaceResultDistance>
+        </div>
+        <PlaceResultAdditionalInfo>
+          <PlaceResultFirstAddress>{place.addressPartOne}</PlaceResultFirstAddress>
+          <div>{place.addressPartTwo}</div>
+        </PlaceResultAdditionalInfo>
+      </PlaceResult>
+    ))}
   </ul>
 );
 

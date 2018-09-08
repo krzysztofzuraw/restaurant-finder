@@ -10,9 +10,24 @@ const ContentContainer = styled('div')`
   grid-template-columns: 33% auto;
 `;
 
+const mockedPlaces = [
+  {
+    name: 'Vaffanapoli',
+    distance: '100 meters',
+    addressPartOne: 'Włodkowica 5/5',
+    addressPartTwo: '50-250 Wrocław',
+  },
+  {
+    name: 'Gniazdo',
+    distance: '1km',
+    addressPartOne: 'Opera 5/5',
+    addressPartTwo: '50-250 Wrocław',
+  },
+];
+
 export const Content: React.SFC = () => (
   <ContentContainer>
-    <Sidebar />
+    <Sidebar placeResults={mockedPlaces} />
     <MapContainer />
   </ContentContainer>
 );

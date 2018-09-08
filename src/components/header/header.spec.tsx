@@ -6,7 +6,7 @@ import { Header } from '.';
 
 afterEach(cleanup);
 
-describe('BookOrderModal Component', () => {
+describe('Header Component', () => {
   it('should render correctly', () => {
     const component = render(setupComponent(<Header />));
     expect(component).toMatchSnapshot();
