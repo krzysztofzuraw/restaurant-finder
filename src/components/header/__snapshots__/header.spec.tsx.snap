@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BookOrderModal Component should render correctly 1`] = `
+exports[`Header Component should render correctly 1`] = `
 Object {
   "baseElement": .emotion-1 {
   background-color: #2470d8;

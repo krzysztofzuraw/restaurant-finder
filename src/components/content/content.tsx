@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'react-emotion';
 
+import { Sidebar } from '~src/components';
 import { MapContainer } from '~src/containers';
 
 const ContentContainer = styled('div')`
@@ -9,9 +10,24 @@ const ContentContainer = styled('div')`
   grid-template-columns: 33% auto;
 `;
 
+const mockedPlaces = [
+  {
+    name: 'Vaffanapoli',
+    distance: '100 meters',
+    addressPartOne: 'Włodkowica 5/5',
+    addressPartTwo: '50-250 Wrocław',
+  },
+  {
+    name: 'Gniazdo',
+    distance: '1km',
+    addressPartOne: 'Opera 5/5',
+    addressPartTwo: '50-250 Wrocław',
+  },
+];
+
 export const Content: React.SFC = () => (
   <ContentContainer>
-    <div>Content here!</div>
+    <Sidebar placeResults={mockedPlaces} />
     <MapContainer />
   </ContentContainer>
 );
