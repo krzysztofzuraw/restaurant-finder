@@ -15,6 +15,7 @@ const PlaceResult = styled('li')`
   padding-top: 12px;
   padding-right: 12px;
   border-bottom: 0.75px solid ${props => props.theme.color.lightGray};
+  transition: box-shadow 0.3s;
 
   > div:first-child {
     display: flex;
@@ -23,6 +24,10 @@ const PlaceResult = styled('li')`
     letter-spacing: 0.0032em;
     font-weight: ${props => props.theme.fontWeight.semiBold};
     line-height: ${props => props.theme.lineHeight};
+  }
+
+  :hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   }
 `;
 
