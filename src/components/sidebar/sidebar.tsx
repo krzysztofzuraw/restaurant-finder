@@ -27,6 +27,7 @@ const PlaceResult = styled('li')`
   }
 
   :hover {
+    transform: translateY(-1px);
     box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   }
 `;

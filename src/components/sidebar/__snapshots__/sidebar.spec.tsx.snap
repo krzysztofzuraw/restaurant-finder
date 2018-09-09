@@ -20,6 +20,8 @@ Object {
   padding-top: 12px;
   padding-right: 12px;
   border-bottom: 0.75px solid #D6D6D6;
+  -webkit-transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s;
 }
 
 .emotion-4 > div:first-child {
@@ -41,6 +43,13 @@ Object {
   letter-spacing: 0.0032em;
   font-weight: 600;
   line-height: 25px;
+}
+
+.emotion-4:hover {
+  -webkit-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  transform: translateY(-1px);
+  box-shadow: 0 0 11px rgba(33,33,33,0.2);
 }
 
 .emotion-0 {
@@ -134,7 +143,7 @@ Object {
   "container": <div>
     <ul>
       <li
-        class="css-1lk1wnc"
+        class="css-14f4z7v"
       >
         <div>
           <h2
@@ -162,7 +171,7 @@ Object {
         </div>
       </li>
       <li
-        class="css-1lk1wnc"
+        class="css-14f4z7v"
       >
         <div>
           <h2
