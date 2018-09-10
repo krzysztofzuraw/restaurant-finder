@@ -2,20 +2,30 @@ import * as React from 'react';
 
 import { mapsService } from '~src/services';
 
-export class MapContainer extends React.Component {
+interface State {
+  coords: { x: number; y: number };
+}
+
+export class MapContainer extends React.Component<{}, State> {
+  state = {
+    coords: {
+      x: 0,
+      y: 0,
+    },
+  };
   private mapContainer = React.createRef<HTMLDivElement>();
-  private coords = { x: 52, y: 21 };
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(
-      location => {
-        mapsService.initMap(this.mapContainer.current!, {
-          x: location.coords.latitude,
-          y: location.coords.longitude,
-        });
-      },
-      () => mapsService.initMap(this.mapContainer.current!, this.coords)
+      location =>
+        this.setState({ coords: { x: location.coords.latitude, y: location.coords.longitude } }),
+      () => this.setState({ coords: { x: 52, y: 21 } })
     );
+  }
+
+  componentDidUpdate() {
+    const map = mapsService.initMap(this.mapContainer.current!, this.state.coords);
+    mapsService.placeCurrentLocationMarker(map, this.state.coords);
   }
 
   render() {

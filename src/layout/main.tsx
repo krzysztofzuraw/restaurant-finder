@@ -23,6 +23,7 @@ injectGlobal`
   h2, h6 {
     margin: 0;
   }
+
 `;
 
 const GridLayout = styled('div')`

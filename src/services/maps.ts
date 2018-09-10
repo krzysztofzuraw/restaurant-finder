@@ -1,3 +1,4 @@
+import { css, keyframes } from 'emotion';
 import leaflet from 'leaflet';
 
 import { configService } from '.';
@@ -22,4 +23,39 @@ export const initMap = (el: HTMLElement, mapCenter: IPoint, defaultZoom: number 
       maxZoom: 18,
     })
     .addTo(map);
+
+  return map;
+};
+
+const pulse = keyframes`
+  0% {
+      box-shadow: 0 0 0 0 rgba(36, 112, 216, 0.4);
+  }
+  70% {
+      box-shadow: 0 0 0 30px rgba(36, 112, 216, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(36, 112, 216, 0);
+  }
+`;
+
+const currentLocation = css`
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgb(36, 112, 216);
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(36, 112, 216, 0.4);
+  animation: ${pulse} 2s infinite;
+
+  &:hover {
+    animation: none;
+  }
+`;
+
+export const placeCurrentLocationMarker = (map: leaflet.Map, point: IPoint) => {
+  const icon = leaflet.divIcon({
+    className: `${currentLocation}`,
+  });
+  leaflet.marker([point.x, point.y], { icon }).addTo(map);
 };
