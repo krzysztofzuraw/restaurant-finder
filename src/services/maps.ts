@@ -1,4 +1,5 @@
-import { css, keyframes } from 'emotion';
+// import { css, keyframes } from 'emotion';
+import mapboxgl from 'mapbox-gl';
 
 import { configService } from '~src/services';
 
@@ -9,10 +10,10 @@ interface IPoint {
   y: number;
 }
 
-window.mapboxgl.accessToken = config.MAPBOX_API_KEY;
+mapboxgl.accessToken = config.MAPBOX_API_KEY;
 
 export const initMap = (el: HTMLElement, mapCenter: IPoint, defaultZoom: number = 13) => {
-  return new window.mapboxgl.Map({
+  return new mapboxgl.Map({
     container: el,
     style: config.MAPBOX_MAP_STYLE,
     center: [mapCenter.y, mapCenter.x],
@@ -47,7 +48,7 @@ export const initMap = (el: HTMLElement, mapCenter: IPoint, defaultZoom: number 
 // `;
 
 export const placeCurrentLocationMarker = (map: any, point: IPoint) => {
-  const marker = new window.mapboxgl.Marker();
+  const marker = new mapboxgl.Marker();
   marker.setLngLat([point.y, point.x]);
   marker.addTo(map);
 };
