@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-import styled from '~src/layout/theme';
-import SearchIcon from './search.svg';
+import { styled } from '~src/theme';
 
 const HeaderContainer = styled('div')`
   background-color: ${props => props.theme.color.blue};
@@ -25,7 +24,6 @@ const AutocompleteInput = styled('input')`
   border: none;
   font-size: ${props => props.theme.fontSize.regular};
   line-height: ${props => props.theme.lineHeight};
-  background-image: url(${SearchIcon});
   background-repeat: no-repeat;
   background-position: 7px;
   padding-left: 30px;

@@ -1,8 +1,8 @@
 import { injectGlobal } from 'emotion';
 import * as React from 'react';
-import styled from 'react-emotion';
 
 import { Content, Header } from '~src/components';
+import { styled } from '~src/theme';
 
 /* tslint:disable:no-unused-expression */
 injectGlobal`

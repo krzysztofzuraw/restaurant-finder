@@ -13,13 +13,7 @@ module.exports = {
     alias: { '~src': paths.appSrc },
   },
   module: {
-    rules: [
-      { test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ },
-      {
-        test: /\.svg$/,
-        loader: 'svg-inline-loader',
-      },
-    ],
+    rules: [{ test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ }],
   },
   output: {
     path: paths.appBuild,
