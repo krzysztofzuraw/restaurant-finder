@@ -2,7 +2,8 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import { ErrorBoundary } from '~src/boundaries';
-import { AppTheme, MainLayout } from '~src/layout';
+import { MainLayout } from '~src/layout';
+import { AppTheme } from '~src/theme';
 
 ReactDOM.render(
   <ErrorBoundary>

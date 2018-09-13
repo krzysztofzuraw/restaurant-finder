@@ -16,5 +16,6 @@ window.localStorage = {
   getItem: function() {},
   setItem: function() {},
 };
+window.URL.createObjectURL = function() {};
 
 Object.values = () => [];
