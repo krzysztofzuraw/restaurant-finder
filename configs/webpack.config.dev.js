@@ -7,7 +7,18 @@ module.exports = {
   entry: paths.appIndexFile,
   devtool: 'inline-source-map',
   module: {
-    rules: [{ test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ }],
+    rules: [
+      { test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ },
+      {
+        test: /\.(svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
+      },
+    ],
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json'],

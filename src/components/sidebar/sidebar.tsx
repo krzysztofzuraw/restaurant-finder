@@ -1,11 +1,12 @@
 import * as React from 'react';
 
-import { RestaurantIcon } from '~src/components';
 import { styled } from '~src/theme';
+import restaurantIcon from './restaurant.svg';
 
 const PlaceResult = styled('li')`
   display: flex;
   flex-direction: column;
+  background-image: url(${restaurantIcon});
   background-repeat: no-repeat;
   background-color: ${props => props.theme.color.white};
   background-position: 30px;
@@ -68,7 +69,6 @@ export const Sidebar: React.SFC<Props> = ({ placeResults }) => (
   <ul>
     {placeResults.map((place, idx) => (
       <PlaceResult key={`${place}-${idx}`}>
-        <RestaurantIcon />
         <div>
           <PlaceResultHeader>{place.name}</PlaceResultHeader>
           <PlaceResultDistance>{place.distance}</PlaceResultDistance>
