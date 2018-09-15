@@ -35,6 +35,7 @@ Object {
   border: none;
   font-size: 1em;
   line-height: 25px;
+  background-image: url();
   background-repeat: no-repeat;
   background-position: 7px;
   padding-left: 30px;
@@ -72,7 +73,7 @@ Object {
         role="search"
       >
         <input
-          class="css-168oqxk"
+          class="css-1ckarqe"
           placeholder="Type a name of restaurant..."
           type="search"
         />
