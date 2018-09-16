@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentLocationMarker should render correctly 1`] = `
+.emotion-0 {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgb(36,112,216);
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(36,112,216,0.4);
+  -webkit-animation: animation-1pz3hvn 2s infinite;
+  animation: animation-1pz3hvn 2s infinite;
+}
+
+.emotion-0:hover {
+  -webkit-animation: none;
+  animation: none;
+}
+
+<div
+  class="emotion-0"
+/>
+`;
