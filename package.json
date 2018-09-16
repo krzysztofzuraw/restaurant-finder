@@ -11,6 +11,7 @@
     "build": "webpack --mode production --config configs/webpack.config.prod.js",
     "tsc": "tsc --project . --noEmit",
     "test": "jest --config jest.config.js",
+    "test:watch": "jest --config jest.config.js --watch",
     "test:ci": "jest --config jest.config.js && codecov",
     "lint": "tslint --project .",
     "prelint": "pretty-quick",

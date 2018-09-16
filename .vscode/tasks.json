@@ -7,6 +7,11 @@
       "type": "npm",
       "script": "tsc",
       "problemMatcher": ["$tsc"]
+    },
+    {
+      "type": "npm",
+      "script": "test:watch",
+      "isBackground": true
     }
   ]
 }
