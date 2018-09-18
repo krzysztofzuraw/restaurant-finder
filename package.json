@@ -35,7 +35,7 @@
     "prettier": "1.14.2",
     "pretty-quick": "1.6.0",
     "react-hot-loader": "4.3.8",
-    "react-testing-library": "5.0.1",
+    "react-testing-library": "5.1.0",
     "rimraf": "2.6.2",
     "ts-jest": "23.1.4",
     "ts-loader": "5.1.1",
