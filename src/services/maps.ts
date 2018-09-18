@@ -1,14 +1,10 @@
 import mapboxgl from 'mapbox-gl';
 
 import { getCurrentLocationMarker } from '~src/components';
+import { IPoint } from '~src/models';
 import { configService } from '~src/services';
 
 const config = configService.getConfig();
-
-interface IPoint {
-  x: number;
-  y: number;
-}
 
 mapboxgl.accessToken = config.MAPBOX_API_KEY;
 
