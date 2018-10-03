@@ -6,7 +6,7 @@ import { appActions, appConstants } from '.';
 
 export type AppState = Readonly<{
   userLocation: IPoint | null;
-  error: string | null;
+  isFetching: boolean;
 }>;
 
 export type AppActions = ActionType<typeof appActions>;
@@ -14,6 +14,7 @@ export type AppActions = ActionType<typeof appActions>;
 const userLocationReducer = (state: AppState['userLocation'] = null, action: AppActions) => {
   switch (action.type) {
     case appConstants.SET_USER_LOCATION:
+    case appConstants.SET_DEFAULT_USER_LOCATION:
       return action.payload.location;
 
     default:
@@ -21,11 +22,12 @@ const userLocationReducer = (state: AppState['userLocation'] = null, action: App
   }
 };
 
-const errorReducer = (state: AppState['error'] = null, action: AppActions) => {
+const isFetchingReducer = (state: AppState['isFetching'] = false, action: AppActions) => {
   switch (action.type) {
-    case appConstants.SET_USER_LOCATION_ERROR:
-      return action.payload.errorMsg;
+    case appConstants.INIT_APP:
+      return true;
 
+    case appConstants.SET_DEFAULT_USER_LOCATION:
     case appConstants.SET_USER_LOCATION:
     default:
       return state;
@@ -34,5 +36,5 @@ const errorReducer = (state: AppState['error'] = null, action: AppActions) => {
 
 export default combineReducers<AppState, AppActions>({
   userLocation: userLocationReducer,
-  error: errorReducer,
+  isFetching: isFetchingReducer,
 });

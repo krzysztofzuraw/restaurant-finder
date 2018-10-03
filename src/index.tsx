@@ -3,15 +3,15 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import { ErrorBoundary } from '~src/boundaries';
-import { MainLayout } from '~src/layout';
-import store from '~src/store';
+import { MainLayoutContainer } from '~src/containers';
+import { store } from '~src/store';
 import { AppTheme } from '~src/theme';
 
 ReactDOM.render(
   <Provider store={store}>
     <ErrorBoundary>
       <AppTheme>
-        <MainLayout />
+        <MainLayoutContainer />
       </AppTheme>
     </ErrorBoundary>
   </Provider>,
