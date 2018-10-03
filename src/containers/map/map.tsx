@@ -1,31 +1,33 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 
+import Types from 'Types';
 import { mapsService } from '~src/services';
 
-interface State {
-  coords: { x: number; y: number };
-}
+const mapStateToProps = (state: Types.RootState) => ({
+  userLocation: state.app.userLocation,
+});
 
-export class MapContainer extends React.Component<{}, State> {
-  state = {
-    coords: {
-      x: 52,
-      y: 21,
-    },
-  };
+type Props = ReturnType<typeof mapStateToProps>;
+
+class Component extends React.Component<Props> {
   private mapContainer = React.createRef<HTMLDivElement>();
 
-  componentDidMount() {
-    // navigator.geolocation.getCurrentPosition(
-    //   location =>
-    //     this.setState({ coords: { x: location.coords.latitude, y: location.coords.longitude } }),
-    //   () => this.setState({ coords: { x: 52, y: 21 } })
-    // );
-    const map = mapsService.initMap(this.mapContainer.current!, this.state.coords);
-    mapsService.placeCurrentLocationMarker(map, this.state.coords);
+  componentDidUpdate(prevProps: Props) {
+    const { userLocation } = this.props;
+
+    if (userLocation && prevProps.userLocation !== userLocation) {
+      const map = mapsService.initMap(this.mapContainer.current!, userLocation);
+      mapsService.placeCurrentLocationMarker(map, userLocation);
+    }
   }
 
   render() {
     return <div ref={this.mapContainer} />;
   }
 }
+
+export const MapContainer = connect(
+  mapStateToProps,
+  {}
+)(Component);
