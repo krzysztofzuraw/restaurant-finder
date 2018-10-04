@@ -5263,10 +5263,10 @@ pretty-format@^23.6.0:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
-pretty-quick@1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/pretty-quick/-/pretty-quick-1.7.0.tgz#6be2a707f874b56a461f6508c9fbd5d1c9234930"
-  integrity sha512-bKoLGOy2rvPKcypkzYqlyqBBAtf0yKV7VK0C/7E4m541dY98rxZsbBt4GDRa/mc74EBPCeuiFe1fkKiyqjUKVg==
+pretty-quick@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/pretty-quick/-/pretty-quick-1.6.0.tgz#afc3591eb5c4cf37614a305d489a8a40e57c9258"
+  integrity sha512-bnCmsPy98ERD7VWBO+0y1OGWLfx/DPUjNFN2ZRVyxuGBiic1BXAGgjHsTKgBIbPISdqpP6KBEmRV0Lir4xu/BA==
   dependencies:
     chalk "^2.3.0"
     execa "^0.8.0"
@@ -6685,10 +6685,10 @@ ts-jest@23.10.3:
     semver "^5.5"
     yargs-parser "10.x"
 
-ts-loader@5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-5.1.1.tgz#361eeae3cc3c6f63d2e9f421dba90c4b14659aa6"
-  integrity sha512-FMBbssAss3CCheWe7ta+c4FL/PGVjgMKzduIghdRkKOPilCWSTGJk/OCj5xQGfjH5rE1lFXmml7atDIjdZ4Msw==
+ts-loader@5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-5.2.1.tgz#e6815c631dcafc24319ce8be6f8af94908749cf3"
+  integrity sha512-KC0cOvsFVyxBlg5h9jvaMlIL2tNsyQLvT2/OvIlO0AMUBJ4iXTtOfaDEqvmqv2lM/icekQfDsP2PsYBCDHpuOQ==
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^4.0.0"
