@@ -15,10 +15,9 @@
     "test:ci": "jest --config jest.config.js && codecov",
     "lint": "tslint --project .",
     "prelint": "pretty-quick",
-    "precommit": "yarn run lint",
-    "prepush": "concurrently 'yarn run lint' 'yarn run tsc' 'yarn run test'",
-    "reinstall": "rimraf node_modules && yarn install",
-    "clean:dist": "rimraf dist"
+    "reinstall": "rimraf node_modules && npm install",
+    "clean:dist": "rimraf dist",
+    "type-coverage": "type-coverage --project . --at-least 90"
   },
   "devDependencies": {
     "@types/jest": "23.3.4",
@@ -42,6 +41,7 @@
     "ts-loader": "5.2.1",
     "tslint": "5.11.0",
     "tslint-config-prettier": "1.15.0",
+    "type-coverage": "^1.2.1",
     "typescript": "3.1.1",
     "typescript-styled-plugin": "0.11.0",
     "webpack": "4.20.2",
