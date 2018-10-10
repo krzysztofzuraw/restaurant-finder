@@ -2,6 +2,7 @@
 
 exports[`Sidebar Component should render correctly with places 1`] = `
 Object {
+  "asFragment": [Function],
   "baseElement": <body>
     .emotion-4 {
   display: -webkit-box;
@@ -244,6 +245,7 @@ Object {
 
 exports[`Sidebar Component should render correctly without places 1`] = `
 Object {
+  "asFragment": [Function],
   "baseElement": <body>
     <div>
       <ul />

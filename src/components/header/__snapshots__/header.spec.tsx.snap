@@ -2,6 +2,7 @@
 
 exports[`Header Component should render correctly 1`] = `
 Object {
+  "asFragment": [Function],
   "baseElement": .emotion-1 {
   background-color: #2470d8;
   grid-area: 'header';
