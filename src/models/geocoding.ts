@@ -13,7 +13,7 @@ interface IGeocodingFeatureDTO {
   type: string;
   text: string;
   place_name: string;
-  center: string[];
+  center: [number, number];
 }
 
 export interface IGeocodingResultModel {
@@ -35,7 +35,7 @@ interface IGeocodingFeatureModel {
   type: string;
   text: string;
   placeName: string;
-  center: string[];
+  center: [number, number];
 
   serialize(): IGeocodingFeatureDTO;
 }
@@ -66,7 +66,7 @@ class GeocodingFeatureModel implements IGeocodingFeatureModel {
     public id: string,
     public type: string,
     public placeName: string,
-    public center: string[],
+    public center: [number, number],
     public text: string
   ) {}
 
