@@ -32,11 +32,19 @@ const AutocompleteInput = styled('input')`
   padding-right: 10px;
 `;
 
-export const Header: React.SFC = () => (
+interface Props {
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export const Header: React.SFC<Props> = ({ onChange }) => (
   <HeaderContainer>
     <h1>Find a restaurant</h1>
     <form role="search">
-      <AutocompleteInput type="search" placeholder="Type a name of restaurant..." />
+      <AutocompleteInput
+        type="search"
+        placeholder="Type a name of restaurant..."
+        onChange={onChange}
+      />
     </form>
   </HeaderContainer>
 );

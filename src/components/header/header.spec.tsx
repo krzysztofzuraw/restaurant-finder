@@ -8,7 +8,7 @@ afterEach(cleanup);
 
 describe('Header Component', () => {
   it('should render correctly', () => {
-    const component = render(setupComponent(<Header />));
+    const component = render(setupComponent(<Header onChange={jest.fn()} />));
     expect(component).toMatchSnapshot();
   });
 });

@@ -1,6 +1,6 @@
 import { combineEpics, Epic } from 'redux-observable';
 import { of } from 'rxjs';
-import { catchError, filter, map, switchMap } from 'rxjs/operators';
+import { catchError, debounceTime, filter, map, switchMap } from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';
 
 import Types from 'Types';
@@ -14,6 +14,7 @@ const geocodeUserInput: Epic<
 > = (action$, {}, { geocodingService }) =>
   action$.pipe(
     filter(isActionOf(geocodingActions.geocodingRequest)),
+    debounceTime(5000),
     switchMap(action => geocodingService.searchForPlaces(action.payload)),
     map(result => geocodingActions.geocodingSuccess(result)),
     catchError(err => of(geocodingActions.geocodingError(err)))
