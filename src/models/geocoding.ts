@@ -26,7 +26,7 @@ export interface IGeocodingResultModel {
   serialize(): IGeocodingResultDTO;
 }
 
-interface IGeocodingFeatureModel {
+export interface IGeocodingFeatureModel {
   constructor: {
     create(feature: IGeocodingFeatureDTO): IGeocodingFeatureModel;
   };

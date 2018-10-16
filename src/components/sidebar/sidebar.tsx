@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import { IGeocodingFeatureModel } from '~src/models';
 import { styled } from '~src/theme';
 import restaurantIcon from './restaurant.svg';
 
@@ -57,25 +58,20 @@ const PlaceResultFirstAddress = styled('div')`
 `;
 
 interface Props {
-  placeResults: Array<{
-    name: string;
-    distance: string;
-    addressPartOne: string;
-    addressPartTwo: string;
-  }>;
+  places: IGeocodingFeatureModel[];
 }
 
-export const Sidebar: React.SFC<Props> = ({ placeResults }) => (
+export const Sidebar: React.SFC<Props> = ({ places }) => (
   <ul>
-    {placeResults.map((place, idx) => (
+    {places.map((place, idx) => (
       <PlaceResult key={`${place}-${idx}`}>
         <div>
-          <PlaceResultHeader>{place.name}</PlaceResultHeader>
-          <PlaceResultDistance>{place.distance}</PlaceResultDistance>
+          <PlaceResultHeader>{place.placeName}</PlaceResultHeader>
+          <PlaceResultDistance>{place.id}</PlaceResultDistance>
         </div>
         <PlaceResultAdditionalInfo>
-          <PlaceResultFirstAddress>{place.addressPartOne}</PlaceResultFirstAddress>
-          <div>{place.addressPartTwo}</div>
+          <PlaceResultFirstAddress>{place.text}</PlaceResultFirstAddress>
+          <div>{place.center}</div>
         </PlaceResultAdditionalInfo>
       </PlaceResult>
     ))}

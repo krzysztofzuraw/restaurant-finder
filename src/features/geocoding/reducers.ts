@@ -22,6 +22,8 @@ const geocodingResult = (
 
     case getType(geocodingActions.geocodingError):
     case getType(geocodingActions.geocodingRequest):
+      return null;
+
     default:
       return state;
   }
@@ -34,6 +36,8 @@ const isFetching = (state: GeocodingState['isFetching'] = false, action: Geocodi
 
     case getType(geocodingActions.geocodingError):
     case getType(geocodingActions.geocodingSuccess):
+      return false;
+
     default:
       return state;
   }
@@ -46,6 +50,8 @@ const error = (state: GeocodingState['error'] = null, action: GeocodingActions) 
 
     case getType(geocodingActions.geocodingRequest):
     case getType(geocodingActions.geocodingSuccess):
+      return null;
+
     default:
       return state;
   }

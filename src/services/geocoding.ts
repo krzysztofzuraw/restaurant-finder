@@ -7,7 +7,7 @@ const config = configService.getConfig();
 export const searchForPlaces = async (query: string): Promise<IGeocodingResultModel> =>
   agentInstance
     .get<IGeocodingResultDTO>(`/mapbox.places/${query}.json`, {
-      params: { access_token: config.MAPBOX_API_KEY, autocomplete: true },
+      params: { access_token: config.MAPBOX_API_KEY, autocomplete: true, types: 'poi' },
     })
     .then(res => res.data)
     .then(data => GeocodingResultModel.create(data));
