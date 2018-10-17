@@ -66,12 +66,14 @@ export const Sidebar: React.SFC<Props> = ({ places }) => (
     {places.map((place, idx) => (
       <PlaceResult key={`${place}-${idx}`}>
         <div>
-          <PlaceResultHeader>{place.placeName}</PlaceResultHeader>
-          <PlaceResultDistance>{place.id}</PlaceResultDistance>
+          <PlaceResultHeader>{place.text}</PlaceResultHeader>
+          <PlaceResultDistance>100m</PlaceResultDistance>
         </div>
         <PlaceResultAdditionalInfo>
-          <PlaceResultFirstAddress>{place.text}</PlaceResultFirstAddress>
-          <div>{place.center}</div>
+          <PlaceResultFirstAddress>{place.properties.address}</PlaceResultFirstAddress>
+          <div>
+            {place.context[1].text} {place.context[2].text}
+          </div>
         </PlaceResultAdditionalInfo>
       </PlaceResult>
     ))}
