@@ -6,19 +6,19 @@ import { Sidebar } from '~src/components/sidebar';
 import { geocodingSelectors } from '~src/features/geocoding';
 
 const mapStateToProps = (state: Types.RootState) => ({
-  places: geocodingSelectors.getGeocodingFeatures(state),
+  placesFormatted: geocodingSelectors.getGeocodingFeaturesFormatted(state),
   isFetching: geocodingSelectors.getIsFetching(state),
-  error: geocodingSelectors.getError(state),
 });
 
 type Props = ReturnType<typeof mapStateToProps>;
 
 class Component extends React.Component<Props> {
   render() {
-    if (this.props.isFetching) {
+    const { placesFormatted, isFetching } = this.props;
+    if (isFetching) {
       return <div>Loading...</div>;
-    } else if (this.props.places.length > 0) {
-      return <Sidebar places={this.props.places} />;
+    } else if (placesFormatted.length > 0) {
+      return <Sidebar places={placesFormatted} />;
     }
     return <div>Type Something!</div>;
   }

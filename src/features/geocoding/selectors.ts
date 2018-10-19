@@ -7,10 +7,15 @@ const getGeocodingResult = createSelector(getGeocodingState, state => state.geoc
 
 export const getIsFetching = createSelector(getGeocodingState, state => state.isFetching);
 export const getError = createSelector(getGeocodingState, state => state.error);
-export const getGeocodingFeatures = createSelector(getGeocodingResult, result => {
-  if (result) {
-    return result.features;
-  } else {
-    return [];
-  }
-});
+const getGeocodingFeatures = createSelector(
+  getGeocodingResult,
+  result => (result ? result.features : [])
+);
+
+export const getGeocodingFeaturesFormatted = createSelector(getGeocodingFeatures, features =>
+  features.map(feature => ({
+    placeName: feature.text,
+    addressFirstPart: feature.properties.address,
+    addressSecondPart: `${feature.context[1].text} ${feature.context[2].text}`,
+  }))
+);
