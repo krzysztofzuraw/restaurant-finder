@@ -61,7 +61,7 @@ export interface IGeocodingFeatureModel {
   serialize(): IGeocodingFeatureDTO;
 }
 
-class GeocodingFeatureModel implements IGeocodingFeatureModel {
+export class GeocodingFeatureModel implements IGeocodingFeatureModel {
   // prettier-ignore
   "constructor": typeof GeocodingFeatureModel;
   constructor(
