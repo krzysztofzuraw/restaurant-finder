@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import Types from 'Types';
-import { geocodingService, mapsService } from '~src/services';
+import { mapsService } from '~src/services';
 
 const mapStateToProps = (state: Types.RootState) => ({
   userLocation: state.app.userLocation,
@@ -20,7 +20,6 @@ class Component extends React.Component<Props> {
       const map = mapsService.initMap(this.mapContainer.current!, userLocation);
       mapsService.placeCurrentLocationMarker(map, userLocation);
     }
-    geocodingService.searchForPlaces('rynek');
   }
 
   render() {
