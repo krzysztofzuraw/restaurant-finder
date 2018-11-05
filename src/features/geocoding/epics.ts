@@ -1,6 +1,6 @@
 import { combineEpics, Epic } from 'redux-observable';
 import { of } from 'rxjs';
-import { catchError, debounceTime, filter, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, debounceTime, filter, map, switchMap } from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';
 
 import Types from 'Types';
