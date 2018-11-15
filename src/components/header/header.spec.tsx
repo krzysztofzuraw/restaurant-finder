@@ -8,7 +8,7 @@ afterEach(cleanup);
 
 describe('Header Component', () => {
   it('should render correctly', () => {
-    const component = render(setupComponent(<Header onChange={jest.fn()} />));
+    const component = render(setupComponent(<Header onSubmit={jest.fn()} onChange={jest.fn()} />));
     expect(component).toMatchSnapshot();
   });
 });

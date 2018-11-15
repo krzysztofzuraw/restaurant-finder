@@ -7,16 +7,25 @@ import { geocodingActions } from '~src/features/geocoding';
 const dispatchProps = { geocodeRequest: geocodingActions.geocodingRequest };
 
 type Props = typeof dispatchProps;
+interface State {
+  searchValue: string;
+}
 
-class Component extends React.Component<Props> {
-  handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.value !== '') {
-      this.props.geocodeRequest(event.target.value);
-    }
+class Component extends React.Component<Props, State> {
+  state = {
+    searchValue: '',
   };
 
+  handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    this.props.geocodeRequest(this.state.searchValue);
+  };
+
+  handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+    this.setState({ searchValue: event.target.value });
+
   render() {
-    return <Header onChange={this.handleChange} />;
+    return <Header onSubmit={this.handleSubmit} onChange={this.handleChange} />;
   }
 }
 

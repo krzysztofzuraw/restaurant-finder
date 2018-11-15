@@ -33,13 +33,14 @@ const AutocompleteInput = styled('input')`
 `;
 
 interface Props {
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmit: (event: React.FormEvent) => void;
+  onChange: (element: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Header: React.SFC<Props> = ({ onChange }) => (
+export const Header: React.SFC<Props> = ({ onSubmit, onChange }) => (
   <HeaderContainer>
     <h1>Find a restaurant</h1>
-    <form role="search">
+    <form role="search" action="." method="get" onSubmit={onSubmit}>
       <AutocompleteInput
         type="search"
         placeholder="Type a name of restaurant..."

@@ -11,11 +11,11 @@ const geocodeUserInput: Epic<
   Types.RootAction,
   Types.RootState,
   Types.Services
-> = (action$, {}, { geocodingService }) =>
+> = (action$, {}, services) =>
   action$.pipe(
     filter(isActionOf(geocodingActions.geocodingRequest)),
     debounceTime(5000),
-    switchMap(action => geocodingService.searchForPlaces(action.payload)),
+    switchMap(action => services.geocodingService.searchForPlaces(action.payload)),
     map(result => geocodingActions.geocodingSuccess(result)),
     catchError(err => of(geocodingActions.geocodingError(err)))
   );
