@@ -24,7 +24,7 @@ const setUserLocation: Epic<Types.RootAction, Types.RootAction, Types.RootState,
     map(position =>
       appActions.setUserLocation({ x: position.coords.latitude, y: position.coords.longitude })
     ),
-    catchError(() => of(appActions.setDefaultUserLocation({ x: 52, y: 21 })))
+    catchError(() => of(appActions.setDefaultUserLocation({ x: 51.1, y: 17.03 })))
   );
 
 export default combineEpics(setUserLocation);

@@ -19,3 +19,7 @@ export const getGeocodingFeaturesFormatted = createSelector(getGeocodingFeatures
     addressSecondPart: `${feature.context[1].text} ${feature.context[2].text}`,
   }))
 );
+
+export const getGeocodingFeaturesCoordsWithInfo = createSelector(getGeocodingFeatures, features =>
+  features.map(feature => ({ coords: feature.center, info: feature.text }))
+);

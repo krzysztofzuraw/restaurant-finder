@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import Types from 'Types';
-import { Sidebar } from '~src/components/sidebar';
+import { Sidebar, Loader } from '~src/components';
 import { geocodingSelectors } from '~src/features/geocoding';
 
 const mapStateToProps = (state: Types.RootState) => ({
@@ -16,11 +16,11 @@ class Component extends React.Component<Props> {
   render() {
     const { placesFormatted, isFetching } = this.props;
     if (isFetching) {
-      return <div>Loading...</div>;
+      return <Loader />;
     } else if (placesFormatted.length > 0) {
       return <Sidebar places={placesFormatted} />;
     }
-    return <div>Type Something!</div>;
+    return <div />;
   }
 }
 

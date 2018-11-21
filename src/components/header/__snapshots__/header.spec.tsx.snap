@@ -52,6 +52,8 @@ Object {
           Find a restaurant
         </h1>
         <form
+          action="."
+          method="get"
           role="search"
         >
           <input
@@ -71,6 +73,8 @@ Object {
         Find a restaurant
       </h1>
       <form
+        action="."
+        method="get"
         role="search"
       >
         <input

@@ -34,7 +34,7 @@ const AutocompleteInput = styled('input')`
 
 interface Props {
   onSubmit: (event: React.FormEvent) => void;
-  onChange: (element: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Header: React.SFC<Props> = ({ onSubmit, onChange }) => (
