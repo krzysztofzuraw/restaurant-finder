@@ -1,4 +1,4 @@
-import { getLocationMarker, getCurrentLocationMarker } from '.';
+import { getCurrentLocationMarker, getLocationMarker } from '.';
 
 describe('CurrentLocationMarker', () => {
   it('should render correctly', () => {

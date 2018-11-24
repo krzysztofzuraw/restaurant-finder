@@ -2,8 +2,8 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import Types from 'Types';
-import { mapsService } from '~src/services';
 import { geocodingSelectors } from '~src/features/geocoding';
+import { mapsService } from '~src/services';
 
 const mapStateToProps = (state: Types.RootState) => ({
   userLocation: state.app.userLocation,

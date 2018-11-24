@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import Types from 'Types';
-import { Sidebar, Loader } from '~src/components';
+import { Loader, Sidebar } from '~src/components';
 import { geocodingSelectors } from '~src/features/geocoding';
 
 const mapStateToProps = (state: Types.RootState) => ({
